@@ -1,0 +1,1 @@
+# instalacion_22_04.sh
