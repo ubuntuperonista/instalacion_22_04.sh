@@ -27,10 +27,8 @@ sudo gsettings reset org.mate.session.required-components windowmanager
 sudo apt-get purge compiz compiz-plugins-default compiz-plugins compizconfig-settings-manager
 
 #no hace falta en 18.04lts:
-#echo '#Agregado por script de Peron' >>  
-/etc/modprobe.d/alsa-base.conf
-#echo 'options snd-hda-intel model=asus-mode5' >>  
-/etc/modprobe.d/alsa-base.conf
+#echo '#Agregado por script de Peron' >>  /etc/modprobe.d/alsa-base.conf
+#echo 'options snd-hda-intel model=asus-mode5' >>  /etc/modprobe.d/alsa-base.conf
 
 
 echo 'agregando PPAs'
@@ -86,8 +84,7 @@ sudo apt-get install libfontconfig1:i386 libx11-6:i386 libxrender1:i386
 libxext6:i386 libgl1-mesa-glx:i386 libglu1-mesa:i386 libglib2.0-0:i386 
 libsm6:i386 
 cd ~/Descargas/
-wget 
-http://dl.google.com/dl/earth/client/current/google-earth-stable_current_i386.deb
+wget http://dl.google.com/dl/earth/client/current/google-earth-stable_current_i386.deb
 sudo dpkg -i google-earth-stable_current_i386.deb 
 sudo apt-get install -f
 cd ~
@@ -161,8 +158,7 @@ wget http://download.xnview.com/XnSketch-linux.tgz ;
 tar xzvf XnSketch-linux.tgz ;
 mv XnSketch/ .XnSketch/ ;
 rm ~/XnSketch-linux.tgz ;
-echo 'modifique el usuario pierre por el suyo en el archivo de 
-configuración'
+echo 'modifique el usuario pierre por el suyo en el archivo de configuración'
 nano ~/.XnSketch/XnSketch.desktop
 cd ~/.XnSketch/ ;
 sudo cp XnSketch.desktop /usr/share/applications ;
@@ -219,9 +215,7 @@ wget http://www.retrocmp.com/attachements/panelsim_pdp10ki10_linux.tgz ;
 tar xvzf panelsim_pdp10ki10_linux.tgz ;
 rm ~/.simh/panelsim/ki10/start.sh ;
 cd ~/.simh/panelsim/ki10/ ;
-wget 
-http://repositories.lib.utexas.edu/bitstream/handle/2152/13510/decwar_drforbin_cis2_tops10_port-2.3.tap 
-;
+wget http://repositories.lib.utexas.edu/bitstream/handle/2152/13510/decwar_drforbin_cis2_tops10_port-2.3.tap ;
 sudo apt-get install libX11-dev libpth-dev xorg-dev gcc libjpeg-dev 
 libpthread-workqueue-dev x11proto-core-dev x11proto-bigreqs-dev 
 freeglut3 freeglut3-dev ;
@@ -240,8 +234,7 @@ cp -p * ../backups ;
 cd ~/.simh/panelsim/z80pack-1.27/frontpanel-2.1/ ;
 make -f Makefile.linux ;
 make -f Makefile.linux clean ;
-sudo cp ~/.simh/panelsim/z80pack-1.27/frontpanel-2.1/libfrontpanel.so 
-/usr/lib ; 
+sudo cp ~/.simh/panelsim/z80pack-1.27/frontpanel-2.1/libfrontpanel.so /usr/lib ; 
 cd ~/.simh/panelsim/z80pack-1.27/altairsim/srcsim/ ;
 make -f Makefile.linux ;
 make -f Makefile.linux clean ;
@@ -257,15 +250,10 @@ make -f Makefile.linux clean ;
 
 echo '************instalar cool-retro-term en Ubuntu 20.04lts'
 
-sudo apt-get install build-essential qml-module-qtgraphicaleffects qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings qml-module-qtquick-controls qml-module-qtquick-dialogs qmlscene qt5-default qt5-qmake qtdeclarative5-dev qtdeclarative5-localstorage-plugin qtdeclarative5-qtquick2-plugin qtdeclarative5-window-plugin qtdeclarative5-dev
-
-git clone --recursive https://github.com/Swordfish90/cool-retro-term.git
-
-cd cool-retro-term
-
-qmake && make
-
-
+sudo apt-get install build-essential qml-module-qtgraphicaleffects qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings qml-module-qtquick-controls qml-module-qtquick-dialogs qmlscene qt5-default qt5-qmake qtdeclarative5-dev qtdeclarative5-localstorage-plugin qtdeclarative5-qtquick2-plugin qtdeclarative5-window-plugin qtdeclarative5-dev ;
+git clone --recursive https://github.com/Swordfish90/cool-retro-term.git ;
+cd cool-retro-term ;
+qmake && make ;
 ./cool-retro-term
 
 echo '*********************** Emparchar y compilar MOCP********'
